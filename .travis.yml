@@ -7,5 +7,4 @@ services:
 before_script: pip install docker-compose
 
 script:
-  - docker-compose run --rm app sh -c 'python manage.py migrate authtoken'
-  - docker-compose up
+  - docker-compose run app sh -c "python manage.py test && flake8"
